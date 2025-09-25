@@ -10,42 +10,100 @@
     color: #e5e7eb;       /* Light Gray for text */
     line-height: 1.6;
   }
-  
-  /* Header */
+/* Default (Desktop ke liye) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #111;
+  color: yellow;
+}
+
+header nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Hero section */
+.hero {
+  height: 100vh;
+  background: url("images/Cover.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 40px;
+  color: yellow;
+}
+
+.hero p {
+  font-size: 18px;
+  color: white;
+}
+
+/* Services Grid */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ---------- Responsive Fixes ---------- */
+
+/* Tablet */
+@media (max-width: 992px) {
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 50px;
-    background: linear-gradient(90deg, #1f2937, #111827);
-    color: #fff;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  }
-  header .logo {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #facc15; /* Yellow Accent */
+    padding: 10px 20px;
   }
   header nav a {
-    color: #e5e7eb;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color .3s;
+    margin: 0 8px;
+    font-size: 16px;
   }
-  header nav a:hover {
-    color: #facc15;
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
   }
+  .hero h2 {
+    font-size: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  header nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  header nav a {
+    font-size: 18px;
+  }
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+  .hero h2 {
+    font-size: 26px;
+  }
+  .hero p {
+    font-size: 14px;
+  }
+}
+
   
   /* Hero (Dark Overlay) */
   .hero {
     height: 100vh;
-    background: url("image/Cover.jpg") center/cover no-repeat;
+    background: url("images/Cover.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
